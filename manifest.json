@@ -1,0 +1,34 @@
+{
+  "id": "com.universaltill.button-nosale",
+  "name": "No Sale",
+  "version": "1.0.0",
+  "description": "Adds a No Sale button to the sale screen: pressing it publishes a drawer-release request handled by an in-process WASM module, so every no-sale drawer opening is audited.",
+  "author": "Universal Till",
+  "website": "https://universaltill.com",
+  "canonical_type": "button",
+  "runtime": "wasm",
+  "device_arch": "any",
+  "min_pos_version": "1.0.0",
+  "permissions": [
+    "events:receive"
+  ],
+  "locales": [
+    "en-US"
+  ],
+  "entries": [
+    {
+      "type": "button",
+      "key": "no-sale",
+      "label": "No Sale",
+      "sort_order": 1,
+      "trigger_event": "button.nosale.pressed"
+    }
+  ],
+  "entrypoint": "./bin/plugin.wasm",
+  "hooks": [
+    {
+      "event": "button.nosale.pressed",
+      "action": "nosale.audit"
+    }
+  ]
+}
