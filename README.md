@@ -15,5 +15,5 @@ This repo is the reference sample for the `button` canonical type.
 Tag `v<version>` → CI validates the manifest, builds the WASI module,
 packages a universal `tar.gz`, publishes to the marketplace and (dev)
 auto-approves.
-Secrets: `MARKETPLACE_BASE_URL`, `MARKETPLACE_UPLOAD_TOKEN`.
+Secrets: `MARKETPLACE_UPLOAD_TOKEN`; variable: `MARKETPLACE_BASE_URL`.
 Vars: `AUTO_APPROVE`, `MARKETPLACE_LISTING_ID` (set after first publish).
